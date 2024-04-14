@@ -16,8 +16,10 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <Providers>
         <html lang="en" suppressHydrationWarning>
-          <body className={inter.className}>{children}</body>
-          <Toaster />
+          <body className={inter.className}>
+            {children}
+            <Toaster />
+          </body>
         </html>
       </Providers>
     </ClerkProvider>
