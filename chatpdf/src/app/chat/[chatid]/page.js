@@ -10,6 +10,8 @@ import React from "react";
 
 const ChatPage = async ({ params: { chatId } }) => {
   const { userId } = await auth();
+  console.log(userId);
+
   if (!userId) {
     return redirect("/sign-in");
   }
@@ -20,9 +22,9 @@ const ChatPage = async ({ params: { chatId } }) => {
   if (!_chats.find((chat) => chat.id === parseInt(chatId))) {
     return redirect("/");
   }
-
+  console.log(_chats);
   const currentChat = _chats.find((chat) => chat.id === parseInt(chatId));
-
+  console.log(currentChat);
   return (
     <div className="flex max-h-screen overflow-scroll">
       <div className="flex w-full max-h-screen overflow-scroll">
