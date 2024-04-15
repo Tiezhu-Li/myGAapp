@@ -35,7 +35,7 @@ const FileUpload = () => {
       try {
         setUploading(true);
         const data = await uploadToS3(file);
-        console.log("meow", data);
+        // console.log("meow", data);
         if (!data?.file_key || !data.file_name) {
           toast.error("Something went wrong");
           return;
