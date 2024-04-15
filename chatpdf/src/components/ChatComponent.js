@@ -9,7 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const ChatComponent = ({ chatId }) => {
-  const { data, isLoading } = useQuery({
+  const { data, isPending } = useQuery({
     queryKey: ["chat", chatId],
     queryFn: async () => {
       const response = await axios.post("/api/get-messages", {
@@ -44,7 +44,7 @@ const ChatComponent = ({ chatId }) => {
         <h3 className="text-xl font-bold">Chat</h3>
       </div>
 
-      <MessageList messages={messages} isLoading={isLoading} />
+      <MessageList messages={messages} isPending={isPending} />
 
       <form
         onSubmit={handleSubmit}

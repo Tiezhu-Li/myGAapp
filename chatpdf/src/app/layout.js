@@ -1,10 +1,10 @@
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "react-hot-toast";
 import Providers from "/src/components/Providers";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "ChatPDF",
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <Providers>
         <html lang="en" suppressHydrationWarning>
-          <body className={inter.className}>
+          <body>
             {children}
             <Toaster />
           </body>
